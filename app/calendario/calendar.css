@@ -48,13 +48,17 @@
   height: 30px;
   padding-top: 3px;
 }
+.today-label{
+   background-color: var(--color-primary) !important;
+   color: var(--color-primary-content) !important;
+}
 .expanded {
   grid-column: span 2;
   grid-row: span 2;
 }
 .calendar-header {
   background-color: #ffffff;
-  text-align: start;
+  text-align: center;
   font-weight: bold;
   padding: 10px;
   background-color: var(--color-base-100);
@@ -87,7 +91,7 @@
 
 .selected {
   background-color: var(--color-neutral) !important;
-  color: var(--color-neutral-content) !important;
+  color: var(--color-base-content) !important;
 }
 
 .btn {

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-
+import Dialog from "./dialog";
 type CalendarioProps = {
    date: Date;
 }
 
 export default function FullCalendar({ date }: CalendarioProps) {
    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+   const [isOpen, setIsOpen] = useState(false);
    const currentData = new Date();
       const getDaysOfWeekInMonth = (dayOfWeek: number) => {
          const days = [];
@@ -44,8 +45,8 @@ export default function FullCalendar({ date }: CalendarioProps) {
        "Sáb",
      ];
      const handleDateClick = (date: Date) => {
-       
-       return setSelectedDate(date);
+      setSelectedDate(date);
+      setIsOpen(true);
      };
    return (
       <div className="parent">
@@ -56,13 +57,16 @@ export default function FullCalendar({ date }: CalendarioProps) {
            </div>
            {getDaysOfWeekInMonth(index).map((dia, index) => (
               <div key={index} 
-              className={"calendar-day "+ (date.getMonth() !== dia.getMonth() ? "not-current-month " : "current-month ") + (`${currentData.getDate()} - ${currentData.getMonth()}`  === `${dia.getDate()} - ${dia.getMonth()}` ? "today " : "") + (`${selectedDate?.getDate()} - ${selectedDate?.getMonth()}` === `${dia.getDate()} - ${dia.getMonth()}` ? "selected " : "")}
+              className={"calendar-day "+ (date.getMonth() !== dia.getMonth() ? "not-current-month " : "current-month ") + (`${selectedDate?.getDate()} - ${selectedDate?.getMonth()}` === `${dia.getDate()} - ${dia.getMonth()}` ? "selected " : "")}
               onClick={() => handleDateClick(dia)}>
-                 <span className="day-label">{dia.getDate()} </span>
+                 <span className={"day-label " + (`${currentData.getDate()} - ${currentData.getMonth()}`  === `${dia.getDate()} - ${dia.getMonth()}` ? "today-label " : "")}>{dia.getDate()} </span>
               </div>
            ))}
         </div>
       ))}
+      {isOpen ? (
+      <Dialog dateIni={selectedDate || date} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      ): null}
       </div>
    );
 }
