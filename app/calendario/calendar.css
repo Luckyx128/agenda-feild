@@ -71,9 +71,11 @@
 
 .calendar-day {
   text-align: center;
-  padding: 10px;
+  padding: 10%;
   height: 15%; /* Adjust height as needed */
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   justify-content: start;
   align-items: start;
   background-color: var(--color-base-100);
@@ -105,4 +107,36 @@
 }
 .current-month {
   color: var(--color-base-content);
+}
+
+.agent-letter {
+  width: 20px;
+  height: 25px;
+  font-weight: bold;
+  color: var(--color-base-content);
+  text-align: center;
+  padding: var(--size-field);
+  background-color: var(--color-info);
+  border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .calendar-container {
+    width: 100%;
+   
+  }
+
+  .calendar-day {
+    height: 10%;
+  }
+  .day-label {
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+    font-size: smaller;
+    padding-top: 1px;
+  }
+  
 }

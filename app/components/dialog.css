@@ -38,7 +38,9 @@
    width: 100%;
    height: 100%;
 }
-
+.dialog-content-item{
+   width: 100%;
+}
 label {
    font-size: 1.2rem;
    margin-bottom: 10px;
@@ -101,4 +103,43 @@ textarea{
    background-color: var(--color-base-100);
    resize: none;
    color: var(--color-base-content);
+}
+
+.form-field{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   gap: var(--size-field);
+}
+
+@media screen and (max-width: 768px) {
+   .dialog {
+      width: 90%;
+      padding: 10px;
+   }
+   .dialog-content{
+      width: 100%;
+      height: 100%;
+   }
+   .btn-submit{
+      width: 100%;
+      padding: 10px;
+   }
+   .btn-neutral{
+      width: 100%;
+      padding: 10px;
+   }
+   label {
+      font-size: 1rem;
+   }
+   input{
+      font-size: 1rem;
+   }
+   textarea{
+      font-size: 1rem;
+   }
+   
 }
