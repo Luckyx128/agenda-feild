@@ -80,6 +80,7 @@
   align-items: start;
   background-color: var(--color-base-100);
   color: var(--color-base-content);
+  border-radius: var(--radius-field);
   border: 0.1px solid var(--color-previous-month-content);
 }
 
@@ -112,12 +113,12 @@
 .agent-letter {
   width: 20px;
   height: 25px;
-  font-weight: bold;
   color: var(--color-base-content);
   text-align: center;
   padding: var(--size-field);
   background-color: var(--color-info);
   border-radius: 5px;
+  margin-right: 0.5rem;
 }
 
 

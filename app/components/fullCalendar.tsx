@@ -86,14 +86,12 @@ export default function FullCalendar({ date }: CalendarioProps) {
                   ? "not-current-month "
                   : "current-month ") +
                 (`${selectedDate?.getDate()} - ${selectedDate?.getMonth()}` ===
-                `${dia.getDate()} - ${dia.getMonth()}` 
+                `${dia.getDate()} - ${dia.getMonth()}`
                   ? "selected "
                   : "")
               }
               onClick={() => handleDateClick(dia)}
             >
-            
-               
               <span
                 className={
                   "day-label " +
@@ -106,20 +104,17 @@ export default function FullCalendar({ date }: CalendarioProps) {
                 {dia.getDate()}{" "}
               </span>
               <span>
-              {events.map((event) => (
-             ((new Date(event.date).getUTCDate() === dia.getDate() && new Date(event.date).getUTCMonth() === dia.getMonth() &&
-               new Date(event.date).getUTCFullYear() === dia.getFullYear()
-             ) ? (
-               <>
-               <small key={event.id}  className="agent-letter">{event.agent[0]}</small>
-               
-
-               </>
-            
-             ) : null)
-                 
-             ))}
-             </span>
+                {events.map((event) =>
+                  new Date(event.date).getUTCDate() === dia.getDate() &&
+                  new Date(event.date).getUTCMonth() === dia.getMonth() &&
+                  new Date(event.date).getUTCFullYear() ===
+                    dia.getFullYear() ? (
+                    <small key={event.id} className="agent-letter">
+                      {event.agent[0]}
+                    </small>
+                  ) : null
+                )}
+              </span>
             </div>
           ))}
         </div>
