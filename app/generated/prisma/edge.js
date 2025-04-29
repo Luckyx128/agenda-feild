@@ -140,7 +140,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Lucas\\Projetos\\agenda-feild\\app\\generated\\prisma",
+      "value": "/home/luckyx/projetos/agenda_field/agenda-field/app/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -149,12 +149,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\Lucas\\Projetos\\agenda-feild\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/luckyx/projetos/agenda_field/agenda-field/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -168,12 +168,11 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "postgresql://luckyx:ps2pcwii@localhost:5432/agenda-field?connection_limit=1&sslmode=prefer"
       }
     }
   },
