@@ -10,6 +10,7 @@ type layout = `calendar` | `dia`;
 export default function Calendario() {
   const [date, setDate] = useState(new Date());
   const [layout, setLayout] = useState<layout>("calendar");
+
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const handleDateChange = (newDate: Date) => {
