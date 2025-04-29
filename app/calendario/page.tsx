@@ -5,11 +5,19 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import AddIcon from "@mui/icons-material/Add";
 
+<<<<<<< HEAD
 type layout = `calendar` | `dia`;
 
 export default function Calendario() {
   const [date, setDate] = useState(new Date());
   const [layout, setLayout] = useState<layout>("calendar");
+=======
+type latout = `calendar` | `dia`;
+
+export default function Calendario() {
+  const [date, setDate] = useState(new Date());
+  const [layout, setLayout] = useState<latout>("calendar");
+>>>>>>> 50fa34add02ce56b3015153204bf5d9ec6191ab6
   const [menuVisible, setMenuVisible] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const handleDateChange = (newDate: Date) => {
