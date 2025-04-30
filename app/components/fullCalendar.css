@@ -1,0 +1,116 @@
+.parent {
+	margin: var(--size-field);
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	padding: 1rem;
+	border-radius: var(--radius-field);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-base-100);
+}
+.context-option{
+   background-color: var(--color-base-100);
+   width: 100%;
+   height: 100%;
+   padding: var(--size-field);
+   gap: 0.5rem;
+   display: flex;
+   align-items: center;
+   transition: background-color 0.3s ease;
+   cursor: pointer;
+}
+.context-option:hover{
+   background-color: var(--color-primary);
+   color: var(--color-primary-content);
+}
+.day-label {
+	background-color: var(--color-base-100);
+	border-radius: 1rem;
+	width: 30px;
+	height: 30px;
+	padding-top: 3px;
+}
+
+.today-label {
+	background-color: var(--color-primary) !important;
+	color: var(--color-primary-content) !important;
+}
+
+.expanded {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.calendar-header {
+	background-color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+	background-color: var(--color-base-100);
+	color: var(--color-base-content);
+}
+
+.calendar-column {
+	height: 100%;
+}
+
+.calendar-day {
+	text-align: center;
+	padding: 10%;
+	height: 15%;
+	/* Adjust height as needed */
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: start;
+	align-items: start;
+	background-color: var(--color-base-100);
+	color: var(--color-base-content);
+	border-radius: var(--radius-field);
+	border: 0.1px solid var(--color-previous-month-content);
+}
+
+.calendar-day:hover {
+	cursor: pointer;
+}
+
+.today {
+	color: var(--color-base-content) !important;
+	background-color: var(--color-base-200) !important;
+}
+
+.selected {
+	background-color: var(--color-neutral) !important;
+	color: var(--color-base-content) !important;
+}
+
+.date {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--color-base-content);
+	margin-left: 1rem;
+}
+
+
+.not-current-month {
+	color: var(--color-previous-month-content);
+}
+
+.current-month {
+	color: var(--color-base-content);
+}
+
+.agent-letter {
+	width: 20px;
+	height: 25px;
+	color: var(--color-base-content);
+	text-align: center;
+	padding: var(--size-field);
+	background-color: var(--color-info);
+	border-radius: 5px;
+	margin-right: 0.5rem;
+}

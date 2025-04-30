@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { getDaysOfWeekInMonth } from "../hooks/getDaysOfWeek";
+import EventIcon from '@mui/icons-material/Event';
 import Dialog from "./dialog";
+import ViewDayIcon from '@mui/icons-material/ViewDay';
+import './fullCalendar.css'
 type CalendarioProps = {
   date: Date;
 };
@@ -17,6 +21,8 @@ export default function FullCalendar({ date }: CalendarioProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const currentData = new Date();
   const buscarEventos = async () => {
     const response = await fetch("/api/event", {
@@ -30,7 +36,16 @@ export default function FullCalendar({ date }: CalendarioProps) {
     }
     return response.json();
   };
+  const handleContextMenu = (e: React.MouseEvent,date:Date) => {
+    e.preventDefault();
+    setSelectedDate(date);
+    setMenuPosition({ x: e.pageX, y: e.pageY });
+    setMenuVisible(true);
+  };
 
+  const handleClick = () => {
+    setMenuVisible(false);
+  };
   useEffect(() => {
     buscarEventos()
       .then((data) => {
@@ -42,42 +57,33 @@ export default function FullCalendar({ date }: CalendarioProps) {
       });
   }, [isOpen]);
 
-  const getDaysOfWeekInMonth = (dayOfWeek: number) => {
-    const days = [];
-    const currentMonth = date.getMonth();
-    const currentYear = date.getFullYear();
-    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
-    const semanasNoMesAtual = 7 - firstDayOfMonth.getDay();
-    const quantidadeDeSemanasNoMesAnterior = 7 - semanasNoMesAtual;
-
-    for (let i = 0; i < quantidadeDeSemanasNoMesAnterior; i++) {
-      const diaDoMesAnterior = new Date(currentYear, currentMonth, 0 - i);
-      if (diaDoMesAnterior.getDay() === dayOfWeek) {
-        days.push(diaDoMesAnterior);
-      }
-    }
-    for (let day = 1; day <= 31; day++) {
-      const currentDate = new Date(currentYear, currentMonth, day);
-      if (currentDate.getMonth() !== currentMonth) break;
-      if (currentDate.getDay() === dayOfWeek) {
-        days.push(new Date(currentYear, currentMonth, day));
-      }
-    }
-    return days;
-  };
+  const getDaysOfWeek = getDaysOfWeekInMonth
   const diasDaSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
-  const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
-    setIsOpen(true);
-  };
+  
   return (
-    <div className="parent">
+    <div className="parent" onClick={handleClick}>
+      {menuVisible && (
+              <ul
+                className="context-menu"
+                style={{
+                  top: menuPosition.y,
+                  left: menuPosition.x,
+      
+                  listStyle: "none",
+                  margin: 0,
+                  zIndex: 1000,
+                }}
+              >
+                <li className="context-option" onClick={() => window.location.href = `/calendario/${selectedDate?.toISOString().split('T')[0]}`}><ViewDayIcon/>Ver Eventos</li>
+                <li className="context-option" onClick={() => setIsOpen(true)}><EventIcon/>Criar Evento</li>
+              </ul>
+            )}
       {diasDaSemana.map((semana, index) => (
         <div key={index} className="calendar-column">
           <div key={index} className="calendar-header">
             {semana}
           </div>
-          {getDaysOfWeekInMonth(index).map((dia, index) => (
+          {getDaysOfWeek(index, date).map((dia, index) => (
             <div
               key={index}
               className={
@@ -90,7 +96,8 @@ export default function FullCalendar({ date }: CalendarioProps) {
                   ? "selected "
                   : "")
               }
-              onClick={() => handleDateClick(dia)}
+              
+              onContextMenu={(e) => handleContextMenu(e, dia)}
             >
               <span
                 className={
