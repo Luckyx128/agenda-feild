@@ -1,0 +1,70 @@
+.dia-container {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 5px;
+	width: 100%;
+	background-color: var(--color-base-100);
+}
+
+.hora {
+	display: flex;
+	flex-direction: row;
+}
+
+.after {
+	width: 100%;
+	border-bottom: solid 1px var(--color-previous-month-content);
+	height: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-field);
+	padding: var(--size-field);
+	align-items: start;
+}
+
+.before {
+	width: 100%;
+	height: 50%;
+}
+
+.hora-row {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	border: solid 1px var(--color-previous-month-content);
+	width: 100%;
+}
+
+.hora-row:hover {
+
+	background-color: var(--color-base-100);
+}
+
+.hora-row-active {
+	margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100px;
+	border: solid 1px var(--color-accent);
+	background-color: var(--color-base-300);
+	width: 100%;
+}
+
+.hora-row:last-child {
+	border-bottom: none;
+}
+
+.hora-row .hora-title {
+	font-weight: bold;
+}
+
+.hora-row .hora-description {
+	font-style: italic;
+	color: #666;
+}

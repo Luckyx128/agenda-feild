@@ -1,0 +1,12 @@
+.event-infos {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	border-left: solid 5px var(--color-info);
+	background-color: var(--color-neutral);
+	color: var(--color-neutral-content);
+	padding: 0 1rem;
+	width: auto;
+	font-size: 12px;
+	border-radius: 5px;
+}
