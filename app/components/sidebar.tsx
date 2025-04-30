@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './sidebar.css'
 import Image from 'next/image'
 export default function Sidebar() {
@@ -12,22 +13,18 @@ export default function Sidebar() {
 					height={38}
 					priority
 				/>
-				<h1>Nome APP</h1>
+				<h3>Agenda Field</h3>
 			</section>
 			<nav className="sidebar-nav">
 				<h2 className='sidebar-nav-label'>Agendas</h2>
 				<ul className="sidebar-nav-list">
 					<li className="sidebar-nav-item">
-						<button className="sidebar-nav-button"></button>
+						<button className="sidebar-nav-button"><Link href='/calendario'>Calendario</Link></button>
 					</li>
 					<li className="sidebar-nav-item">
-						<a href="/eventos">Eventos</a>
-					</li>
-					<li className="sidebar-nav-item">
-						<a href="/relatorios">Relatórios</a>
-					</li>
-					<li className="sidebar-nav-item">
-						<a href="/configuracoes">Configurações</a>
+					   <button className="sidebar-nav-button">
+							<Link href='/dia'>Dia</Link>
+						</button>
 					</li>
 				</ul>
 			</nav>
