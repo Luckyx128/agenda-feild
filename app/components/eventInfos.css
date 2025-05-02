@@ -9,4 +9,10 @@
 	width: auto;
 	font-size: 12px;
 	border-radius: 5px;
+	cursor: pointer;
+}
+
+.event-infos:hover{
+	background-color: var(--color-accent);
+	color: var(--color-accent-content);
 }

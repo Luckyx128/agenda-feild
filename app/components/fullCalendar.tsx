@@ -131,6 +131,7 @@ export default function FullCalendar({ date }: CalendarioProps) {
           dateIni={selectedDate || date}
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
+          preData={null}
         />
       ) : null}
     </div>
