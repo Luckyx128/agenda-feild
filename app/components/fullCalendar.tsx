@@ -132,6 +132,7 @@ export default function FullCalendar({ date }: CalendarioProps) {
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
           preData={null}
+          method="POST"
         />
       ) : null}
     </div>

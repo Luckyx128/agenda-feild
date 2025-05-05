@@ -19,9 +19,10 @@ type Props = {
 	isOpen: boolean;
 	onClose: () => void;
 	preData:Info | null
+	method: 'POST' | 'PUT'
 };
 
-export default function Dialog({ dateIni, isOpen, onClose,preData=null }: Props) {
+export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='POST' }: Props) {
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -29,7 +30,7 @@ export default function Dialog({ dateIni, isOpen, onClose,preData=null }: Props)
 		const data = Object.fromEntries(formData.entries());
 		console.log(JSON.stringify(data));
 		const response = await fetch("/api/event", {
-			method: "POST",
+			method: method,
 			headers: {
 				"Content-Type": "application/json",
 			},

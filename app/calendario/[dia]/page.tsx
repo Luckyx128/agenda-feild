@@ -100,6 +100,7 @@ export default function Dia() {
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
           preData={event}
+          method="PUT"
           />):null}
     </div>
   );
