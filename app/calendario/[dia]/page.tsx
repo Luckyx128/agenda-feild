@@ -1,8 +1,8 @@
 // Use client é obrigatório para usar hooks como useParams
 "use client";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
+import {useParams} from "next/navigation";
+import {useEffect, useState} from "react";
+import {useFetch} from "../../hooks/useFetch";
 import "./dia.css";
 import EventInfos from "../../components/eventInfos";
 import Dialog from "@/app/components/dialog";
@@ -46,9 +46,12 @@ export default function Dia() {
       console.log(isOpen)
   }
   const horaFormatada = (index: number) => {
-    const hora = index + 1 < 10 ? "0" + (index + 1) : index + 1 + "";
-    return hora;
+    return index + 1 < 10 ? "0" + (index + 1) : index + 1 + "";
   };
+  const reload = () => {
+
+    window.location.reload();
+  }
   useEffect(() => {
     if (data) setEventsList(data);
   }, [data, eventsList]);
@@ -98,7 +101,7 @@ export default function Dia() {
         <Dialog 
           dateIni={new Date(event.date)}
           isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
+          onClose={reload}
           preData={event}
           method="PUT"
           />):null}

@@ -92,7 +92,10 @@ export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='P
 						</div>
 						<div className="dialog-content-buttons">
 							<button className="btn-submit" type="submit" >
-								Cadastrar
+								{method == 'POST'?(
+										'Cadastrar'
+									)
+								:'Editar'}
 							</button>
 							<button className="btn-neutral" type="button" onClick={onClose}>
 								Cancelar
