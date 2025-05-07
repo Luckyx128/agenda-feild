@@ -30,7 +30,7 @@ export function useFetch<T>({ method, param, url }: FetchProps) {
 		}).then((json: T) => setData(json))
 			.catch(err => setError(err))
 			.finally(() => setLoading(false));
-	}, [])
+	})
 
 	return { data, loading, error }
 

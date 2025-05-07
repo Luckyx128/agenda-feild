@@ -5,7 +5,7 @@ type Props = {
 	empresa: string;
 	agente: string;
 	hora: string;
-	onClick:(value)=>void;
+	onClick:()=>void;
 };
 
 export default function EventInfos({ empresa, agente, hora,onClick }: Props) {
