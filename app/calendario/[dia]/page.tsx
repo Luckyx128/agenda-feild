@@ -33,7 +33,7 @@ export default function Dia() {
   const [eventsList, setEventsList] = useState<Info[]>();
   const [event,setEvent] = useState<Info>();
   const [isOpen,setIsOpen] = useState<boolean>(false)
-  const diasDaSemana = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+  const diasDaSemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
   
   const { data, loading, error } = useFetch<Info[]>({
     method: "GET",
@@ -65,9 +65,10 @@ export default function Dia() {
   return (
     <div className="dia-container">
       <div className="dia-semana">
-        <h1>
-          {diasDaSemana[dateTaget.getUTCDay()]} - {dateTaget.getUTCDate()}{" "}
+          <h1 className="titulo-dia">
+           {dateTaget.getUTCDate()}{" "}
         </h1>
+        <small> - {diasDaSemana[dateTaget.getUTCDay()]}</small>
       </div>
       {Array.from({ length: 24 }, (_, index) => (
         <div className="hora" key={index}>
@@ -96,7 +97,6 @@ export default function Dia() {
           </section>
         </div>
       ))}
-      <p>Dia is a component that represents the agenda for {dia}</p>
       {isOpen && typeof event == 'object'?(
         <Dialog 
           dateIni={new Date(event.date)}

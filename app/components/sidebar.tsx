@@ -7,10 +7,10 @@ export default function Sidebar() {
 			<section className="sidebar-header">
 				<Image
 					className="dark:invert"
-					src="/next.svg"
+					src="/calendar-svgrepo-com.svg"
 					alt="Next.js logo"
-					width={180}
-					height={38}
+					width={40}
+					height={40}
 					priority
 				/>
 				<h3>Agenda Field</h3>
