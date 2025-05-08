@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Sidebar from "../components/sidebar";
 import "./calendar.css";
 
 export const metadata: Metadata = {
@@ -15,7 +14,6 @@ export default function CalendarLayout({
   return (
     <section className="calendar-layout">
       
-      <Sidebar />
       <div className="calendar-container">
         {children}
 

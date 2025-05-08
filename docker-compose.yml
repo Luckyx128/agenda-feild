@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL="postgresql://agenda:agenda@localhost:5432/agenda-field?connection_limit=1&sslmode=prefer"
+      - DATABASE_URL=postgresql://agenda:agenda@db:5432/agenda-field?connection_limit=1&sslmode=prefer
     depends_on:
       - db
     volumes:
@@ -25,7 +25,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
 volumes:
   postgres_data:

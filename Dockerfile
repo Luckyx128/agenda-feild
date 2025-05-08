@@ -5,7 +5,6 @@ WORKDIR /app
 
 COPY package*.json ./
 COPY prisma/schema.prisma ./schema.prisma
-COPY .env.local ./.env
 COPY eslint.config.mjs ./eslint.config.mjs
 RUN npm install
 COPY . .
