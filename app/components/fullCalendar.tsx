@@ -6,6 +6,8 @@ import ViewDayIcon from '@mui/icons-material/ViewDay';
 import './fullCalendar.css'
 type CalendarioProps = {
   date: Date;
+  selectedDate:Date | null
+  setSelectedDate:(value:Date)=> void;
 };
 
 type Event = {
@@ -17,8 +19,8 @@ type Event = {
   empressa: string;
 };
 
-export default function FullCalendar({ date }: CalendarioProps) {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+export default function FullCalendar({ date,selectedDate,setSelectedDate }: CalendarioProps) {
+ 
   const [isOpen, setIsOpen] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   const [menuVisible, setMenuVisible] = useState(false);
@@ -98,6 +100,7 @@ export default function FullCalendar({ date }: CalendarioProps) {
               }
               
               onContextMenu={(e) => handleContextMenu(e, dia)}
+              onClick={()=>setSelectedDate(dia)}
             >
               <span
                 className={

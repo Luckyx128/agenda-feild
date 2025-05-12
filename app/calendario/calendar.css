@@ -44,12 +44,22 @@
 .btn {
 	margin-left: 1rem;
 	padding: var(--size-field);
-	background-color: var(--color-neutral);
 	border-radius: var(--radius-field);
-	color: var(--color-neutral-content);
 	box-shadow: 0px 0px 5px var();
 }
 
+.not{
+	background-color: var(--color-secondary);
+	color:var(--color-secondary-content);
+	cursor: not-allowed;
+}
+
+.activo{
+	background-color: var(--color-primary);
+	color:var(--color-primary-content);
+	cursor: pointer;
+	border: dashed 1px var(--color-primary-content);
+}
 
 .btn-layout {
 

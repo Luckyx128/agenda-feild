@@ -3,11 +3,11 @@ import { useState } from "react";
 import FullCalendar from "../components/fullCalendar";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import AddIcon from "@mui/icons-material/Add";
+import ViewDayIcon from '@mui/icons-material/ViewDay';
 
 export default function Calendario() {
   const [date, setDate] = useState(new Date());
-
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   
   const handleDateChange = (newDate: Date) => {
     setDate(newDate);
@@ -16,10 +16,7 @@ export default function Calendario() {
   return (
     <>
       
-      <div
-        className="action"
-        
-      >
+      <div className="action">
         <button
           className="btn"
           onClick={() =>
@@ -45,16 +42,14 @@ export default function Calendario() {
         </button>
 
         <button
-          className="btn"
-          onClick={() => {
-            /* Add event creation logic here */
-          }}
+          className={"btn " + (selectedDate ? 'activo' : 'not') }
+          onClick={() => window.location.href = `/calendario/${selectedDate?.toISOString().split('T')[0]}`}
         >
-          <AddIcon /> Criar Evento
+          <ViewDayIcon /> Ver dia selecionado
         </button>
       </div>
 
-      <FullCalendar date={date} />
+      <FullCalendar date={date} selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
     </>
   );
 }
