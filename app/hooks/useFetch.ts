@@ -18,11 +18,10 @@ export function useFetch<T>({ method, param, url }: FetchProps) {
 	const [error, setError] = useState<Error | null>(null);
 
 	useEffect(() => {
-		const api_url = process.env.NEXT_PUBLIC_API_URL
 		const parans = Object.entries(param || {})
 			.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
 			.join("&");
-		fetch(api_url + url + '?' + parans, {
+		fetch(url + '?' + parans, {
 			method: method
 		}).then(res => {
 			if (!res.ok) throw new Error('Erro ao buscar dados');

@@ -38,7 +38,7 @@ export default function Dia() {
   const { data, loading, error } = useFetch<Info[]>({
     method: "GET",
     param: null,
-    url: `/event/${dia}`,
+    url: `/api/event/${dia}`,
   });
   const dialogEditarEvento = (evento:Info) => {
       setEvent(evento)
