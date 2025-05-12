@@ -43,7 +43,7 @@ export default function Calendario() {
 
         <button
           className={"btn " + (selectedDate ? 'activo' : 'not') }
-          onClick={() => window.location.href = `/calendario/${selectedDate?.toISOString().split('T')[0]}`}
+          onClick={() => selectedDate ? window.location.href = `/calendario/${selectedDate?.toISOString().split('T')[0]}`:null}
         >
           <ViewDayIcon /> Ver dia selecionado
         </button>
