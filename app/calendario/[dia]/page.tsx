@@ -6,7 +6,7 @@ import {useFetch} from "../../hooks/useFetch";
 import "./dia.css";
 import EventInfos from "../../components/eventInfos";
 import Dialog from "@/app/components/dialog";
-
+import CardInfo from "@/app/components/CardInfo"
 type Info = {
   id: number;
   agent: string;
@@ -56,12 +56,8 @@ export default function Dia() {
     if (data) setEventsList(data);
   }, [data, eventsList]);
 
-  if (loading) {
-    return <div>Carregando</div>;
-  }
-  if (error) {
-    return <div>Erro</div>;
-  }
+   if (loading) return <CardInfo tipo="info" titulo="CONSULTANDO LISTA DE EVENTOS DO DIA!" descricao="Eventos agendados para hoje ordenados pelo horário"/>;
+    if (error) return <CardInfo tipo="erro" titulo="ERRO AO OBTER LISTA DE EVENTOS DO DIA!" descricao="Possivel erro no banco de dados, consultar admistração!"/>;
   return (
     <div className="dia-container">
       <div className="dia-semana">

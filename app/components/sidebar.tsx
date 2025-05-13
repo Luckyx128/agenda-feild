@@ -12,12 +12,12 @@ export default function Sidebar() {
 		<div className={ready?'sidebar':'sidebar'}>
 			<section className="sidebar-header">
 				<Image
-					className="dark:invert"
 					src="/Icone agenda.png"
 					alt="Next.js logo"
 					width={250}
 					height={40}
 					priority
+					onClick={() => window.location.href = '/'}
 				/>
 			</section>
 			<nav className="sidebar-nav">
