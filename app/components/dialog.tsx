@@ -20,9 +20,10 @@ type Props = {
 	onClose: () => void;
 	preData:Info | null
 	method: 'POST' | 'PUT'
+	setIsOpen:(boolean:boolean) => void
 };
 
-export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='POST' }: Props) {
+export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='POST',setIsOpen }: Props) {
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -97,7 +98,7 @@ export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='P
 									)
 								:'Editar'}
 							</button>
-							<button className="btn-neutral" type="button" onClick={onClose}>
+							<button className="btn-neutral" type="button" onClick={()=>setIsOpen(false)}>
 								Cancelar
 							</button>
 						</div>

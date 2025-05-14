@@ -3,6 +3,8 @@ import Link from 'next/link';
 import './sidebar.css'
 import Image from 'next/image'
 import { useState,useEffect } from 'react';
+import HomeIcon from '@mui/icons-material/Home';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 export default function Sidebar() {
 	const [ready,setReady] = useState<boolean>(false)
 	useEffect(() => {
@@ -23,8 +25,11 @@ export default function Sidebar() {
 			<nav className="sidebar-nav">
 				<h2 className='sidebar-nav-label'>Agendas</h2>
 				<ul className="sidebar-nav-list">
+				<li className="sidebar-nav-item">
+						<button className="sidebar-nav-button"><HomeIcon/><Link href='/'>Home</Link></button>
+					</li>
 					<li className="sidebar-nav-item">
-						<button className="sidebar-nav-button"><Link href='/calendario'>Calendario</Link></button>
+						<button className="sidebar-nav-button"><CalendarMonthIcon/><Link href='/calendario'>Calendario</Link></button>
 					</li>
 					{/* <li className="sidebar-nav-item">
 					   <button className="sidebar-nav-button">

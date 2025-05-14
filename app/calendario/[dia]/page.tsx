@@ -86,6 +86,7 @@ export default function Dia() {
                     empresa={event.empressa ?? "Empresa não informada"}
                     agente={event.agent}
                     hora={event.hora}
+                    
                     onClick={()=>dialogEditarEvento(event)}
                   />
                 ))}
@@ -100,6 +101,7 @@ export default function Dia() {
           onClose={reload}
           preData={event}
           method="PUT"
+          setIsOpen={setIsOpen}
           />):null}
     </div>
   );
