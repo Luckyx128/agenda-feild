@@ -26,10 +26,10 @@ export default function Sidebar() {
 				<h2 className='sidebar-nav-label'>Agendas</h2>
 				<ul className="sidebar-nav-list">
 				<li className="sidebar-nav-item">
-						<button className="sidebar-nav-button"><HomeIcon/><Link href='/'>Home</Link></button>
+				<Link href='/'><button className="sidebar-nav-button"><HomeIcon/>Home</button></Link>
 					</li>
 					<li className="sidebar-nav-item">
-						<button className="sidebar-nav-button"><CalendarMonthIcon/><Link href='/calendario'>Calendario</Link></button>
+					<Link href='/calendario'><button className="sidebar-nav-button"><CalendarMonthIcon/>Mês</button></Link>
 					</li>
 					{/* <li className="sidebar-nav-item">
 					   <button className="sidebar-nav-button">
