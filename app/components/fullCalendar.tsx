@@ -136,6 +136,7 @@ export default function FullCalendar({ date,selectedDate,setSelectedDate }: Cale
           onClose={() => setIsOpen(false)}
           preData={null}
           method="POST"
+          setIsOpen={setIsOpen}
         />
       ) : null}
     </div>
