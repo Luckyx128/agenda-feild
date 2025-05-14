@@ -113,7 +113,7 @@ export default function FullCalendar({ date,selectedDate,setSelectedDate }: Cale
               >
                 {dia.getDate()}{" "}
               </span>
-              <span>
+              <span className="list-letter">
                 {events.map((event) =>
                   new Date(event.date).getUTCDate() === dia.getDate() &&
                   new Date(event.date).getUTCMonth() === dia.getMonth() &&
