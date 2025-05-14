@@ -11,7 +11,7 @@ main{
    background-color: var(--color-base-100);
    border-radius: var(--radius-box);
    margin: 1rem;
-   width: 100%;
+   width: 98%;
    overflow: auto;
 } 
 
@@ -46,3 +46,33 @@ main{
    font-size: xx-large;
    font-weight: 900;
 }
+
+
+.btn {
+	margin-left: 1rem;
+   width: 50px;
+	padding: var(--size-field);
+	border-radius: var(--radius-field);
+	box-shadow: 0px 0px 5px var();
+   background-color: var(--color-primary);
+	color:var(--color-primary-content);
+	cursor: pointer;
+   display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+   .btn {
+      margin-left: 1rem;
+      width: 50px;
+      padding: var(--size-field);
+      border-radius: var(--radius-field);
+      box-shadow: 0px 0px 5px var();
+      background-color: var(--color-primary);
+      color:var(--color-primary-content);
+      cursor: pointer;
+      display: block;
+   }
+   
+ }

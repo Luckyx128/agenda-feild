@@ -48,6 +48,7 @@ export default function Home() {
         height={38}
         priority
       />
+      <button className="btn mob" onClick={()=>window.location.href='/calendario'}>Mes</button>
       <section className="sec ">
         <h1 className="TitleEvent">Eventos de Hoje</h1>
         <div className="secin">
