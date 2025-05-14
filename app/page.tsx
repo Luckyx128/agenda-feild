@@ -72,7 +72,7 @@ export default function Home() {
               <DetailEvent key={evento.id} evento={evento} />
             ))
           ):( <div>
-            <p>Nenhum evento encontrado para hoje!</p>
+            <p>Nenhum evento encontrado para os próximos dias!</p>
             <p onClick={()=> window.location.href='/calendario'}>Para cadastrar um evento clique aqui » <AddBoxIcon/></p>
            </div> )
           }
