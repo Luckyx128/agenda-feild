@@ -26,34 +26,33 @@ export async function POST(request: Request) {
 	return NextResponse.json(event)
 }
 
-export async function PUT(request:Request) {
+export async function PUT(request: Request) {
 	const body = await request.json()
-	const {id, agent, date, hora, empressa, descricao } = body
-	console.log({id, agent, date, hora, empressa, descricao })
+	const { id, agent, date, hora, empressa, descricao } = body
 	let result = ''
 	let evento
 	const intID = parseInt(id)
-	try{
-		  evento = await prisma.event.update({
+	try {
+		evento = await prisma.event.update({
 			where: {
-				id:intID,
-		  },
-		  data: {
+				id: intID,
+			},
+			data: {
 				agent,
 				date: new Date(date),
 				hora,
 				descricao,
 				empressa
-		  },
+			},
 		})
 		result = 'Evento editado com sucesso!'
-	}catch(err){
+	} catch (err) {
 		console.error(err)
 		result = 'Erro ao editar evento!'
-	}finally{
-		return NextResponse.json({result,evento})
+	} finally {
+		return NextResponse.json({ result, evento })
 	}
-	
+
 
 
 }

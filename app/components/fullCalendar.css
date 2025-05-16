@@ -60,7 +60,7 @@
 
 .calendar-day {
 	text-align: center;
-	padding: 10%;
+	padding: 0.5rem;
 	height: 15%;
 	/* Adjust height as needed */
 	display: flex;

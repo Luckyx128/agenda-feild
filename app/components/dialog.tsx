@@ -12,24 +12,23 @@ type Info = {
 	hora: string; // formato "HH:mm"
 	createdAt: string; // ISO date string
 	updatedAt: string; // ISO date string
- };
+};
 
 type Props = {
 	dateIni: Date;
 	isOpen: boolean;
 	onClose: () => void;
-	preData:Info | null
+	preData: Info | null
 	method: 'POST' | 'PUT'
-	setIsOpen:(boolean:boolean) => void
+	setIsOpen: (boolean: boolean) => void
 };
 
-export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='POST',setIsOpen }: Props) {
+export default function Dialog({ dateIni, isOpen, onClose, preData = null, method = 'POST', setIsOpen }: Props) {
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const formData = new FormData(event.currentTarget);
 		const data = Object.fromEntries(formData.entries());
-		console.log(JSON.stringify(data));
 		const response = await fetch("/api/event", {
 			method: method,
 			headers: {
@@ -55,18 +54,18 @@ export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='P
 				<section className="dialog-content">
 					<form className="form-field" action="/api/evento" method="post" onSubmit={handleSubmit}>
 						<div className="dialog-content-item">
-							{preData?(
+							{preData ? (
 								<input type="hidden" defaultValue={preData.id} name="id" id="id" />
-							):null}
+							) : null}
 							<label htmlFor="agent">
 								<PersonIcon />
-								<input name="agent" type="text" id="agent" placeholder="Agente" defaultValue={preData? preData.agent:'' } />
+								<input name="agent" type="text" id="agent" placeholder="Agente" defaultValue={preData ? preData.agent : ''} />
 							</label>
 						</div>
 						<div className="dialog-content-item">
 							<label htmlFor="empressa">
 								<LocationCityIcon />
-								<input name="empressa" type="text" id="empressa" placeholder="Empresa" defaultValue={preData? preData.empressa:'' } />
+								<input name="empressa" type="text" id="empressa" placeholder="Empresa" defaultValue={preData ? preData.empressa : ''} />
 							</label>
 						</div>
 
@@ -76,29 +75,29 @@ export default function Dialog({ dateIni, isOpen, onClose,preData=null,method='P
 									type="date"
 									id="date"
 									name="date"
-									defaultValue={preData ?preData.date.split("T")[0]:dateIni.toISOString().split("T")[0]}
+									defaultValue={preData ? preData.date.split("T")[0] : dateIni.toISOString().split("T")[0]}
 								/>
 							</label>
 						</div>
 						<div className="dialog-content-item">
 							<label htmlFor="time">
-								<input type="time" id="time" name="hora" defaultValue={preData?preData.hora:''} />
+								<input type="time" id="time" name="hora" defaultValue={preData ? preData.hora : ''} />
 							</label>
 						</div>
 						<div className="dialog-content-item">
 							<label htmlFor="description">
 								<ArticleIcon />
-								<textarea id="description" name="descricao" placeholder="Descrição" defaultValue={preData?preData.descricao:''} ></textarea>
+								<textarea id="description" name="descricao" placeholder="Descrição" defaultValue={preData ? preData.descricao : ''} ></textarea>
 							</label>
 						</div>
 						<div className="dialog-content-buttons">
 							<button className="btn-submit" type="submit" >
-								{method == 'POST'?(
-										'Cadastrar'
-									)
-								:'Editar'}
+								{method == 'POST' ? (
+									'Cadastrar'
+								)
+									: 'Editar'}
 							</button>
-							<button className="btn-neutral" type="button" onClick={()=>setIsOpen(false)}>
+							<button className="btn-neutral" type="button" onClick={() => setIsOpen(false)}>
 								Cancelar
 							</button>
 						</div>
