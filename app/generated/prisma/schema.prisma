@@ -25,12 +25,13 @@ model User {
 }
 
 model Event {
-  id        Int      @id @default(autoincrement())
-  agent     String?
-  date      DateTime @db.Date
-  hora      String?
-  empressa  String?
-  descricao String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         Int      @id @default(autoincrement())
+  agent      String?
+  date       DateTime @db.Date
+  hora       String?
+  hora_saida String?
+  empressa   String?
+  descricao  String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

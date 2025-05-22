@@ -131,6 +131,7 @@ exports.Prisma.EventScalarFieldEnum = {
   agent: 'agent',
   date: 'date',
   hora: 'hora',
+  hora_saida: 'hora_saida',
   empressa: 'empressa',
   descricao: 'descricao',
   createdAt: 'createdAt',

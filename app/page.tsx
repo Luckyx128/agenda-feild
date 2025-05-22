@@ -11,6 +11,7 @@ type Event = {
 	agent: string;
 	date: string;
 	hora: string;
+	hora_saida: string;
 	empressa: string;
 	descricao: string;
 	createdAt: string;

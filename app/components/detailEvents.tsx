@@ -3,6 +3,7 @@ type Event = {
   agent: string;
   date: string;
   hora: string;
+  hora_saida: string;
   empressa: string;
   descricao: string;
   createdAt: string;
@@ -36,7 +37,7 @@ export default function DetailEvent({ evento }: PropsDetailEvent) {
           <strong>Agente:</strong> {evento.agent}
         </p>
         <small>
-          <strong>Quando:</strong> { converterData(evento.date)} - {evento.hora}
+          <strong>Quando:</strong> { converterData(evento.date)} - {evento.hora} - {evento.hora_saida}
         </small>
       </div>
       <div className="direita">

@@ -114,6 +114,11 @@ textarea{
    height: 100%;
    gap: var(--size-field);
 }
+.dialog-title{
+    font-size: 1.5rem;
+    color: var(--color-base-content);
+    margin-bottom: var(--size-field);
+}
 
 @media screen and (max-width: 768px) {
    .dialog {
@@ -142,4 +147,10 @@ textarea{
       font-size: 1rem;
    }
    
+}
+
+.required{
+    color: var(--color-error);
+   margin-right: 0.5rem;
+   font-weight: bold;
 }

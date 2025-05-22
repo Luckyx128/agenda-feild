@@ -29,6 +29,7 @@ model Event {
   agent     String?
   date      DateTime @db.Date
   hora      String?
+  hora_saida String?
   empressa  String?
   descricao String?
   createdAt DateTime @default(now())

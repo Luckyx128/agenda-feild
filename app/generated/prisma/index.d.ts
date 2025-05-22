@@ -2027,6 +2027,7 @@ export namespace Prisma {
     agent: string | null
     date: Date | null
     hora: string | null
+    hora_saida: string | null
     empressa: string | null
     descricao: string | null
     createdAt: Date | null
@@ -2038,6 +2039,7 @@ export namespace Prisma {
     agent: string | null
     date: Date | null
     hora: string | null
+    hora_saida: string | null
     empressa: string | null
     descricao: string | null
     createdAt: Date | null
@@ -2049,6 +2051,7 @@ export namespace Prisma {
     agent: number
     date: number
     hora: number
+    hora_saida: number
     empressa: number
     descricao: number
     createdAt: number
@@ -2070,6 +2073,7 @@ export namespace Prisma {
     agent?: true
     date?: true
     hora?: true
+    hora_saida?: true
     empressa?: true
     descricao?: true
     createdAt?: true
@@ -2081,6 +2085,7 @@ export namespace Prisma {
     agent?: true
     date?: true
     hora?: true
+    hora_saida?: true
     empressa?: true
     descricao?: true
     createdAt?: true
@@ -2092,6 +2097,7 @@ export namespace Prisma {
     agent?: true
     date?: true
     hora?: true
+    hora_saida?: true
     empressa?: true
     descricao?: true
     createdAt?: true
@@ -2190,6 +2196,7 @@ export namespace Prisma {
     agent: string | null
     date: Date
     hora: string | null
+    hora_saida: string | null
     empressa: string | null
     descricao: string | null
     createdAt: Date
@@ -2220,6 +2227,7 @@ export namespace Prisma {
     agent?: boolean
     date?: boolean
     hora?: boolean
+    hora_saida?: boolean
     empressa?: boolean
     descricao?: boolean
     createdAt?: boolean
@@ -2231,6 +2239,7 @@ export namespace Prisma {
     agent?: boolean
     date?: boolean
     hora?: boolean
+    hora_saida?: boolean
     empressa?: boolean
     descricao?: boolean
     createdAt?: boolean
@@ -2242,6 +2251,7 @@ export namespace Prisma {
     agent?: boolean
     date?: boolean
     hora?: boolean
+    hora_saida?: boolean
     empressa?: boolean
     descricao?: boolean
     createdAt?: boolean
@@ -2253,13 +2263,14 @@ export namespace Prisma {
     agent?: boolean
     date?: boolean
     hora?: boolean
+    hora_saida?: boolean
     empressa?: boolean
     descricao?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type EventOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "agent" | "date" | "hora" | "empressa" | "descricao" | "createdAt" | "updatedAt", ExtArgs["result"]["event"]>
+  export type EventOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "agent" | "date" | "hora" | "hora_saida" | "empressa" | "descricao" | "createdAt" | "updatedAt", ExtArgs["result"]["event"]>
 
   export type $EventPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Event"
@@ -2269,6 +2280,7 @@ export namespace Prisma {
       agent: string | null
       date: Date
       hora: string | null
+      hora_saida: string | null
       empressa: string | null
       descricao: string | null
       createdAt: Date
@@ -2700,6 +2712,7 @@ export namespace Prisma {
     readonly agent: FieldRef<"Event", 'String'>
     readonly date: FieldRef<"Event", 'DateTime'>
     readonly hora: FieldRef<"Event", 'String'>
+    readonly hora_saida: FieldRef<"Event", 'String'>
     readonly empressa: FieldRef<"Event", 'String'>
     readonly descricao: FieldRef<"Event", 'String'>
     readonly createdAt: FieldRef<"Event", 'DateTime'>
@@ -3101,6 +3114,7 @@ export namespace Prisma {
     agent: 'agent',
     date: 'date',
     hora: 'hora',
+    hora_saida: 'hora_saida',
     empressa: 'empressa',
     descricao: 'descricao',
     createdAt: 'createdAt',
@@ -3265,6 +3279,7 @@ export namespace Prisma {
     agent?: StringNullableFilter<"Event"> | string | null
     date?: DateTimeFilter<"Event"> | Date | string
     hora?: StringNullableFilter<"Event"> | string | null
+    hora_saida?: StringNullableFilter<"Event"> | string | null
     empressa?: StringNullableFilter<"Event"> | string | null
     descricao?: StringNullableFilter<"Event"> | string | null
     createdAt?: DateTimeFilter<"Event"> | Date | string
@@ -3276,6 +3291,7 @@ export namespace Prisma {
     agent?: SortOrderInput | SortOrder
     date?: SortOrder
     hora?: SortOrderInput | SortOrder
+    hora_saida?: SortOrderInput | SortOrder
     empressa?: SortOrderInput | SortOrder
     descricao?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -3290,6 +3306,7 @@ export namespace Prisma {
     agent?: StringNullableFilter<"Event"> | string | null
     date?: DateTimeFilter<"Event"> | Date | string
     hora?: StringNullableFilter<"Event"> | string | null
+    hora_saida?: StringNullableFilter<"Event"> | string | null
     empressa?: StringNullableFilter<"Event"> | string | null
     descricao?: StringNullableFilter<"Event"> | string | null
     createdAt?: DateTimeFilter<"Event"> | Date | string
@@ -3301,6 +3318,7 @@ export namespace Prisma {
     agent?: SortOrderInput | SortOrder
     date?: SortOrder
     hora?: SortOrderInput | SortOrder
+    hora_saida?: SortOrderInput | SortOrder
     empressa?: SortOrderInput | SortOrder
     descricao?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -3320,6 +3338,7 @@ export namespace Prisma {
     agent?: StringNullableWithAggregatesFilter<"Event"> | string | null
     date?: DateTimeWithAggregatesFilter<"Event"> | Date | string
     hora?: StringNullableWithAggregatesFilter<"Event"> | string | null
+    hora_saida?: StringNullableWithAggregatesFilter<"Event"> | string | null
     empressa?: StringNullableWithAggregatesFilter<"Event"> | string | null
     descricao?: StringNullableWithAggregatesFilter<"Event"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Event"> | Date | string
@@ -3390,6 +3409,7 @@ export namespace Prisma {
     agent?: string | null
     date: Date | string
     hora?: string | null
+    hora_saida?: string | null
     empressa?: string | null
     descricao?: string | null
     createdAt?: Date | string
@@ -3401,6 +3421,7 @@ export namespace Prisma {
     agent?: string | null
     date: Date | string
     hora?: string | null
+    hora_saida?: string | null
     empressa?: string | null
     descricao?: string | null
     createdAt?: Date | string
@@ -3411,6 +3432,7 @@ export namespace Prisma {
     agent?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     hora?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_saida?: NullableStringFieldUpdateOperationsInput | string | null
     empressa?: NullableStringFieldUpdateOperationsInput | string | null
     descricao?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3422,6 +3444,7 @@ export namespace Prisma {
     agent?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     hora?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_saida?: NullableStringFieldUpdateOperationsInput | string | null
     empressa?: NullableStringFieldUpdateOperationsInput | string | null
     descricao?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3433,6 +3456,7 @@ export namespace Prisma {
     agent?: string | null
     date: Date | string
     hora?: string | null
+    hora_saida?: string | null
     empressa?: string | null
     descricao?: string | null
     createdAt?: Date | string
@@ -3443,6 +3467,7 @@ export namespace Prisma {
     agent?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     hora?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_saida?: NullableStringFieldUpdateOperationsInput | string | null
     empressa?: NullableStringFieldUpdateOperationsInput | string | null
     descricao?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3454,6 +3479,7 @@ export namespace Prisma {
     agent?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     hora?: NullableStringFieldUpdateOperationsInput | string | null
+    hora_saida?: NullableStringFieldUpdateOperationsInput | string | null
     empressa?: NullableStringFieldUpdateOperationsInput | string | null
     descricao?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3590,6 +3616,7 @@ export namespace Prisma {
     agent?: SortOrder
     date?: SortOrder
     hora?: SortOrder
+    hora_saida?: SortOrder
     empressa?: SortOrder
     descricao?: SortOrder
     createdAt?: SortOrder
@@ -3605,6 +3632,7 @@ export namespace Prisma {
     agent?: SortOrder
     date?: SortOrder
     hora?: SortOrder
+    hora_saida?: SortOrder
     empressa?: SortOrder
     descricao?: SortOrder
     createdAt?: SortOrder
@@ -3616,6 +3644,7 @@ export namespace Prisma {
     agent?: SortOrder
     date?: SortOrder
     hora?: SortOrder
+    hora_saida?: SortOrder
     empressa?: SortOrder
     descricao?: SortOrder
     createdAt?: SortOrder

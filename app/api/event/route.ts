@@ -10,7 +10,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
 	const body = await request.json()
-	const { agent, date, hora, empressa, descricao } = body
+	const { agent, date, hora, empressa, descricao,hora_saida } = body
 
 	const event = await prisma.event.create({
 		data: {
@@ -19,6 +19,7 @@ export async function POST(request: Request) {
 			hora,
 			descricao,
 			empressa,
+			hora_saida,
 			createdAt: new Date(),
 		},
 	})
@@ -28,7 +29,7 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {
 	const body = await request.json()
-	const { id, agent, date, hora, empressa, descricao } = body
+	const { id, agent, date, hora, empressa, descricao,hora_saida } = body
 	let result = ''
 	let evento
 	const intID = parseInt(id)
@@ -42,6 +43,7 @@ export async function PUT(request: Request) {
 				date: new Date(date),
 				hora,
 				descricao,
+				hora_saida,
 				empressa
 			},
 		})
@@ -49,9 +51,9 @@ export async function PUT(request: Request) {
 	} catch (err) {
 		console.error(err)
 		result = 'Erro ao editar evento!'
-	} finally {
-		return NextResponse.json({ result, evento })
 	}
+	return NextResponse.json({ result, evento })
+
 
 
 

@@ -1,4 +1,3 @@
-// Use client é obrigatório para usar hooks como useParams
 "use client";
 import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
@@ -12,10 +11,11 @@ type Info = {
   agent: string;
   descricao: string;
   empressa: string ;
-  date: string; // ISO date string
-  hora: string; // formato "HH:mm"
-  createdAt: string; // ISO date string
-  updatedAt: string; // ISO date string
+  date: string;
+  hora: string;
+  hora_saida: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export default function Dia() {
@@ -86,6 +86,7 @@ export default function Dia() {
                     empresa={event.empressa ?? "Empresa não informada"}
                     agente={event.agent}
                     hora={event.hora}
+                    hora_saida={event.hora_saida}
                     
                     onClick={()=>dialogEditarEvento(event)}
                   />
