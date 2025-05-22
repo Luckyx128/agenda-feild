@@ -2,6 +2,7 @@ import "./dialog.css";
 import PersonIcon from '@mui/icons-material/Person';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import ArticleIcon from '@mui/icons-material/Article';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from "sweetalert2";
 type Info = {
 	id: number;
@@ -33,6 +34,22 @@ export default function Dialog({ dateIni, isOpen, onClose, preData = null, metho
 			icon: icon,
 			confirmButtonColor: color,
 		});
+	}
+
+	const deletarEvento = async (id: number) => {
+		const response = await fetch(`/api/event/`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ id }),
+		});
+		if (response.ok) {
+			onClose();
+			showSwal("Sucesso!", "Visita deletada com sucesso!", "success", "#00D390FF");
+		} else {
+			showSwal("Erro!", "Erro durante a deleção!", "error", "#FF627DFF");
+		}
 	}
 
 	const validarFormData = (formData: FormData) => {
@@ -92,7 +109,9 @@ export default function Dialog({ dateIni, isOpen, onClose, preData = null, metho
 
 		>
 			<div className="dialog">
-				<h1 className={'dialog-title'}>AGENDAR VISITA</h1>
+				<h1 className={'dialog-title'}>AGENDAR VISITA { preData ? <DeleteIcon onClick={()=>{
+					deletarEvento(preData.id);
+				}} color={'error'}/> : null} </h1>
 				<section className="dialog-content">
 					<form className="form-field" action="/api/evento" method="post" onSubmit={handleSubmit}>
 						<div className="dialog-content-item">

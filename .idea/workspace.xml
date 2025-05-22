@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a1c0f1-6a4b-49a7-934b-d58e0e85b3e2" name="Changes" comment="feat: add hora_saida field and validation for event creation">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/event/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/event/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/calendario/[dia]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/calendario/[dia]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/detailEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/detailEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/eventInfos.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/eventInfos.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/fullCalendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/fullCalendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/edge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/index-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/generated/prisma/wasm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/generated/prisma/wasm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,8 +79,17 @@
       <workItem from="1747487660058" duration="779000" />
       <workItem from="1747489199928" duration="121000" />
       <workItem from="1747829011892" duration="5000" />
-      <workItem from="1747922604360" duration="5706000" />
+      <workItem from="1747922604360" duration="7607000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add hora_saida field and validation for event creation">
+      <option name="closed" value="true" />
+      <created>1747931120628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747931120628</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

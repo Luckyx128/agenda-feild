@@ -58,3 +58,21 @@ export async function PUT(request: Request) {
 
 
 }
+
+export async function DELETE(request: Request) {
+	const { id } = await request.json()
+	const intID = parseInt(id)
+	let result = ''
+	try {
+		await prisma.event.delete({
+			where: {
+				id: intID,
+			},
+		})
+		result = 'Evento deletado com sucesso!'
+	} catch (err) {
+		console.error(err)
+		result = 'Erro ao deletar evento!'
+	}
+	return NextResponse.json({ result })
+}
